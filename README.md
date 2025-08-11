@@ -6,6 +6,6 @@ Compile with javac PhishingDetector.java and run using java PhishingDetector. En
 ## 💡 Example Output  
 Enter the URL to check: http://freemoney-login-bank123.com → ⚠️ Warning: This URL may be a phishing attempt! Be Aware  
 ## 👩‍💻 Created By  
-*Aishwarya* – 2nd Year CSE (Cybersecurity Specialization)  
+*Aishwarya* – 3rd Year CSE (Cybersecurity Specialization)  
 GitHub: [@Aishwaryeahh-cy](https://github.com/Aishwaryeahh-cy)  
 > Stay smart. Stay cyber-safe. 🛡️✨

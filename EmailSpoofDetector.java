@@ -1,27 +1,22 @@
-// Source code is decompiled from a .class file using FernFlower decompiler.
-import java.util.Scanner;
+# Email Spoof Detector - Beginner Friendly Version
 
-public class EmailSpoofDetector {
-   public EmailSpoofDetector() {
-   }
+# Ask user for sender domain
+sender_domain = input("Enter sender domain (example: mail.google.com): ")
+sender_domain = sender_domain.strip().lower()
 
-   public static void main(String[] var0) {
-      Scanner var1 = new Scanner(System.in);
-      System.out.print("Enter the sender's domain (e.g., mail.google.com): ");
-      String var2 = var1.nextLine().trim().toLowerCase();
-      System.out.print("Enter the 'From' email address (e.g., user@gmail.com): ");
-      String var3 = var1.nextLine().trim().toLowerCase();
-      var1.close();
-      String var4 = getDomainFromEmail(var3);
-      if (var2.contains(var4)) {
-         System.out.println("âœ… No spoofing detected. Sender domain matches 'From' email.");
-      } else {
-         System.out.println(" Possible spoofing detected! Domains do not match.");
-      }
+# Ask user for From email
+from_email = input("Enter From email (example: user@gmail.com): ")
+from_email = from_email.strip().lower()
 
-   }
+# Check if email contains @
+if "@" in from_email:
+    # Get domain after @
+    email_domain = from_email.split("@")[1]
 
-   private static String getDomainFromEmail(String var0) {
-      return var0.contains("@") ? var0.substring(var0.indexOf("@") + 1) : "";
-   }
-}
+    # Compare domains
+    if email_domain in sender_domain:
+        print("No spoofing detected. Domains match.")
+    else:
+        print("Possible spoofing detected! Domains do not match.")
+else:
+    print("Invalid email format.")
